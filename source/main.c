@@ -184,8 +184,8 @@ void I2C_transfer(unsigned char address_7b, unsigned char * pData,unsigned char 
 	if(I2C1->SR2){}
 	for(int i=0; i<nData;i++){
 		I2C_SendData(I2C1,pData[i]);
-		while(!I2C_GetFlagStatus(I2C1,I2C_FLAG_TXE));//esperamos el envio de dato
+		while(!I2C_GetFlagStatus(I2C1,I2C_FLAG_TXE));//wait until tx buffer empty
 	}
-	while(!I2C_GetFlagStatus(I2C1,I2C_FLAG_BTF));//esperamos el envio de dato
+	while(!I2C_GetFlagStatus(I2C1,I2C_FLAG_BTF));//wait until byte transfer finished
 	I2C_GenerateSTOP(I2C1,ENABLE);
 }
