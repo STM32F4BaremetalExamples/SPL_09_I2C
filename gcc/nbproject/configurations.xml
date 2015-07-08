@@ -9,7 +9,7 @@
       </df>
     </df>
     <logicalFolder name="SPL_04_UART"
-                   displayName="SPL_04_UART"
+                   displayName="SPL_09_I2C"
                    projectFiles="true"
                    root="..">
       <logicalFolder name="retarget" displayName="retarget" projectFiles="true">
